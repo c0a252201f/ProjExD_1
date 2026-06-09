@@ -31,7 +31,8 @@ def main():
         if key_lst[pg.K_LEFT]:
             kt_rct.move_ip((-1,0))
         if key_lst[pg.K_RIGHT]:
-            kt_rct.move_ip((+1,0))
+            kt_rct.move_ip((+2,0))
+        kt_rct.move_ip((-1, 0))#こうかとんが左に流れていく
         x=tmr%3200
         screen.blit(bg_img, [-x, 0])
         screen.blit(bg1_img, [-x+1600, 0])
