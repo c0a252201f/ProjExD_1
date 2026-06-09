@@ -17,6 +17,7 @@ def main():
     screen.blit(kt_img,kt_rct)
     kt_img = pg.transform.flip(kt_img,True,False)
     tmr = 0
+    
     while True:
         
 
@@ -24,14 +25,16 @@ def main():
             if event.type == pg.QUIT: return
 
         key_lst = pg.key.get_pressed()
+        dx,dy = 0,0
         if key_lst[pg.K_UP]:
-            kt_rct.move_ip((0,-1))
+            dy -= 1
         if key_lst[pg.K_DOWN]:
-            kt_rct.move_ip((0,+1))
+            dy += 1
         if key_lst[pg.K_LEFT]:
-            kt_rct.move_ip((-1,0))
+            dx -= 1
         if key_lst[pg.K_RIGHT]:
-            kt_rct.move_ip((+2,0))
+            dx += 2
+        kt_rct.move_ip((dx,dy))
         kt_rct.move_ip((-1, 0))#こうかとんが左に流れていく
         x=tmr%3200
         screen.blit(bg_img, [-x, 0])
